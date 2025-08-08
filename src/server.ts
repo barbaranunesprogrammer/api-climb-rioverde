@@ -1,6 +1,9 @@
 import fastify from "fastify";
 import dotenv from "dotenv";
 import cors from "@fastify/cors";
+import fastifyStatic from "@fastify/static"; // <-- Faltava essa importação
+import path from "path"; // <-- Faltava essa importação
+
 import tempoRioVerdeRoutes from "./routes/tempoRioVerde";
 import moonRioVerdeRoutes from "./routes/moonRioVerde";
 import previsaoRioVerdeRoutes from "./routes/previsaoRioVerdeRoutes";
@@ -9,6 +12,12 @@ dotenv.config();
 
 const server = fastify({ logger: true });
 server.register(cors, { origin: '*' });
+
+// Serve arquivos estáticos da pasta 'public'
+server.register(fastifyStatic, {
+  root: path.join(process.cwd(), 'public'),
+  prefix: '/', // Serve na raiz
+});
 
 // Health check endpoint for Render
 server.get('/healthz', async (request, reply) => {
