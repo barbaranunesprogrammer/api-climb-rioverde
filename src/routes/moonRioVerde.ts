@@ -9,7 +9,7 @@ export default async function moonRioVerdeRoutes(server: FastifyInstance) {
   const apiKey = process.env.WEATHER_API_KEY;
   const hoje = new Date();
   const dataISO = hoje.toISOString().split("T")[0];
-  const url = `https://api.weatherapi.com/v1/astronomy.json?key=${apiKey}&q=Rio Verde&dt=${dataISO}&lang=pt`;
+  const url = `https://api.weatherapi.com/v1/astronomy.json?key=${apiKey}&q=Rio Verde GOias Brazil&dt=${dataISO}&lang=pt`;
 
   try {
     const resposta = await fetch(url);

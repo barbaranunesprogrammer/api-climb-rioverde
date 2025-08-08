@@ -22,7 +22,7 @@ server.get("/previsao/rioverde/:data", async (req, res) => {
     return res.status(400).send({ erro: "A data deve estar entre hoje e até 3 dias à frente." });
   }
 
-  const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=Rio Verde&dt=${data}&lang=pt`;
+  const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=Rio Verde GOias Brazil&dt=${data}&lang=pt&aqi=no`;
 
   try {
     const resposta = await fetch(url);
@@ -60,8 +60,3 @@ server.get("/previsao/rioverde/:data", async (req, res) => {
   }
 })
 }
-function functionprevisaoRioVerdeRoutes(server: any, FastifyInstance: any) {
-    throw new Error("Function not implemented.");
-}
-
-

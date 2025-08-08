@@ -5,7 +5,7 @@ import { getWeatherApiError } from "../error/error"
 export default async function tempoRioVerdeRoutes(server: FastifyInstance) {
   server.get('/tempo/rioverde', async (req, res) => {
     const apiKey = process.env.WEATHER_API_KEY;
-    const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=Rio Verde&lang=pt`;
+    const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=Rio Verde GOias Brazil&lang=pt&aqi=no`;
 
     try {
       const resposta = await fetch(url);
