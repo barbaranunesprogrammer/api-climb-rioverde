@@ -249,10 +249,13 @@ function previsaoRioVerdeRoutes(server2) {
 import_dotenv.default.config();
 var server = (0, import_fastify.default)({ logger: true });
 server.register(import_cors.default, { origin: "*" });
+server.get("/healthz", (request, reply) => __async(null, null, function* () {
+  return { status: "ok" };
+}));
 server.register(tempoRioVerdeRoutes);
 server.register(moonRioVerdeRoutes);
 server.register(previsaoRioVerdeRoutes);
 var PORT = Number(process.env.PORT) || 3333;
-server.listen({ port: PORT }, () => {
+server.listen({ port: PORT, host: "0.0.0.0" }, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
