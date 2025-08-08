@@ -88,10 +88,19 @@ function tempoRioVerdeRoutes(server2) {
         }
         const resultado = {
           cidade: dados.location.name,
-          temperatura: dados.current.temp_c,
+          regiao: dados.location.region,
+          pais: dados.location.country,
+          hora_local: dados.location.localtime,
+          temperatura_c: dados.current.temp_c,
+          sensacao_termica_c: dados.current.feelslike_c,
           umidade: dados.current.humidity,
           condicao: dados.current.condition.text,
           vento_kph: dados.current.wind_kph,
+          direcao_vento: dados.current.wind_dir,
+          pressao_mb: dados.current.pressure_mb,
+          precipitacao_mm: dados.current.precip_mm,
+          nebulosidade: dados.current.cloud,
+          indice_uv: dados.current.uv,
           icone: dados.current.condition.icon
         };
         res.send(resultado);

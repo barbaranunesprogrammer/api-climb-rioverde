@@ -5,49 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Documentação da API pública para dados de clima e lua de Rio Verde, GO.">
   <title>API Pública - Clima & Lua de Rio Verde</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      line-height: 1.6;
-      margin: 0 auto;
-      max-width: 800px;
-      padding: 20px;
-    }
-    pre {
-      background-color: #f4f4f4;
-      padding: 1em;
-      border-radius: 5px;
-      white-space: pre-wrap;
-      word-break: break-all;
-    }
-    code {
-      background-color: #eee;
-      padding: 2px 4px;
-      border-radius: 3px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 8px;
-      text-align: left;
-    }
-    th {
-      background-color: #f2f2f2;
-    }
-    #caminho-input {
-      width: 250px;
-    }
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid #ddd;
-      font-size: 0.9em;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
   <header>
@@ -141,13 +100,24 @@
 
    
       <pre>{
-  "cidade": "Rio Verde",
-  "temperatura": 29.5,
-  "umidade": 45,
-  "condicao": "Céu limpo",
-  "vento_kph": 12.3,
-  "icone": "//cdn.weatherapi.com/weather/64x64/day/113.png"
-}</pre>
+  
+    "cidade": "Rio Verde",
+    "regiao": "Goias",
+    "pais": "Brazil",
+    "hora_local": "2025-08-08 20:48",
+    "temperatura_c": 23,
+    "sensacao_termica_c": 23.9,
+    "umidade": 33,
+    "condicao": "Céu limpo",
+    "vento_kph": 17.6,
+    "direcao_vento": "SSW",
+    "pressao_mb": 1015,
+    "precipitacao_mm": 0,
+    "nebulosidade": 5,
+    "indice_uv": 0,
+    "icone": "//cdn.weatherapi.com/weather/64x64/night/113.png"
+      }
+</pre>
       <p><strong>Erros Possíveis:</strong></p>
       <ul>
         <li>400 - Erro da API externa</li>
@@ -252,49 +222,7 @@
     </p>
   </footer>
 
-<script>
-  const BASE_URL = 'https://api-climb-rioverde.onrender.com';
-
-async function buscarClima() {
-  const resultadoEl = document.getElementById('resultado-clima');
-  try {
-    const resp = await fetch(`${BASE_URL}/tempo/rioverde`);
-    if (!resp.ok) throw new Error(`Erro na requisição: ${resp.status}`);
-    const dados = await resp.json();
-    resultadoEl.textContent = JSON.stringify(dados, null, 2);
-  } catch (e) {
-    resultadoEl.textContent = 'Erro: ' + e.message;
-  }
-}
-
-async function buscarEndpoint() {
-  const resultadoEl = document.getElementById('resultado-exemplo');
-  const caminho = document.getElementById('caminho-input').value.trim();
-  try {
-    const resp = await fetch(BASE_URL + caminho);
-    if (!resp.ok) throw new Error('Erro ao buscar: ' + resp.status);
-    const dados = await resp.json();
-    resultadoEl.textContent = JSON.stringify(dados, null, 2);
-  } catch (e) {
-    resultadoEl.textContent = 'Erro: ' + e.message;
-  }
-}
-async function buscarPrevisao() {
-    const data = document.getElementById('data-previsao').value;
-    if (!data) {
-        document.getElementById('resultado-previsao').textContent = 'Escolha uma data!';
-        return;
-    }
-    document.getElementById('resultado-previsao').textContent = 'Carregando...';
-    try {
-        const resp = await fetch(`https://api-climb-rioverde.onrender.com/previsao/rioverde/${data}`);
-        const dados = await resp.json();
-        document.getElementById('resultado-previsao').textContent = JSON.stringify(dados, null, 2);
-    } catch (e) {
-        document.getElementById('resultado-previsao').textContent = 'Erro ao buscar previsão: ' + e;
-    }
-}
-</script>
+<script src="script.js"></script>
 </body>
 
 </html>
