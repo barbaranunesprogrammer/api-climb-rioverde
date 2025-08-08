@@ -46,6 +46,8 @@ var __async = (__this, __arguments, generator) => {
 var import_fastify = __toESM(require("fastify"));
 var import_dotenv = __toESM(require("dotenv"));
 var import_cors = __toESM(require("@fastify/cors"));
+var import_static = __toESM(require("@fastify/static"));
+var import_path = __toESM(require("path"));
 
 // src/routes/tempoRioVerde.ts
 var import_node_fetch = __toESM(require("node-fetch"));
@@ -249,6 +251,11 @@ function previsaoRioVerdeRoutes(server2) {
 import_dotenv.default.config();
 var server = (0, import_fastify.default)({ logger: true });
 server.register(import_cors.default, { origin: "*" });
+server.register(import_static.default, {
+  root: import_path.default.join(process.cwd(), "public"),
+  prefix: "/"
+  // Serve na raiz
+});
 server.get("/healthz", (request, reply) => __async(null, null, function* () {
   return { status: "ok" };
 }));
