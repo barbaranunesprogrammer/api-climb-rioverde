@@ -16,10 +16,10 @@
       Obtenha facilmente informações como temperatura atual, previsão para os próximos dias e fases da lua.
       <br><br>
       A API é <strong>pública</strong> e pode ser usada por qualquer pessoa, sem necessidade de chave de autenticação.<br>
-      <strong>Base URL:</strong>
-      <code>https://api-climb-rioverde.onrender.com</code>
+      <strong>Base URL:</strong> 
+      <code>https://api-weather-rioverde-go.onrender.com/</code>
     </p>
-
+ 
     <nav>
       <a href="#como-usar">Como Usar</a>
       <a href="#endpoints">Endpoints</a>
@@ -34,7 +34,7 @@
       <h2>Como Usar</h2>
       <ul>
         <li>Faça uma requisição GET para <code>/tempo/rioverde</code> para obter o clima atual.</li>
-        <li>Exemplo: <code>GET https://api-climb-rioverde.onrender.com/tempo/rioverde</code></li>
+        <li>Exemplo: <code>GET https://api-weather-rioverde-go.onrender.com/tempo/rioverde</code></li>
         <li>Veja a documentação completa abaixo para mais detalhes.</li>
       </ul>
     </section>
@@ -95,7 +95,7 @@
 
       <h3>1. Clima Atual</h3>
       <p><strong>Requisição:</strong></p>
-      <pre>GET https://api-climb-rioverde.onrender.com/tempo/rioverde</pre>
+      <pre>GET https://api-weather-rioverde-go.onrender.com/tempo/rioverde</pre>
       <p><strong>Resposta:</strong></p>
 
    
@@ -126,7 +126,7 @@
 
       <h3>2. Fase da Lua Atual</h3>
       <p><strong>Requisição:</strong></p>
-      <pre>GET https://api-climb-rioverde.onrender.com/rioverde/moon</pre>
+      <pre>GET https://api-weather-rioverde-go.onrender.com/rioverde/moon</pre>
       <p><strong>Resposta:</strong></p>
       <pre>{
   "cidade": "Rio Verde",
@@ -142,7 +142,7 @@
 
       <h3>3. Previsão Futura</h3>
       <p><strong>Requisição:</strong></p>
-      <pre>GET https://api-climb-rioverde.onrender.com/previsao/rioverde/2025-08-10</pre>
+      <pre>GET https://api-weather-rioverde-go.onrender.com/previsao/rioverde/2025-08-10</pre>
       <p><strong>Parâmetros:</strong></p>
       <table>
         <thead>
@@ -192,7 +192,7 @@
       <h2>Testando a API</h2>
       <p>Você pode testar os endpoints usando <code>curl</code>, Postman ou seu navegador.</p>
       <ul>
-        <li><strong>curl:</strong> <code>curl https://api-climb-rioverde.onrender.com/tempo/rioverde</code></li>
+        <li><strong>curl:</strong> <code>curl https://api-weather-rioverde-go.onrender.com/tempo/rioverde</code></li>
         <li><strong>Navegador:</strong> Cole a URL na barra de endereços</li>
         <li><strong>Postman:</strong> Crie uma requisição GET para o endpoint desejado</li>
       </ul>
