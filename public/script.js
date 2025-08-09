@@ -1,4 +1,4 @@
-const BASE_URL = 'https://api-climb-rioverde.onrender.com';
+const BASE_URL = 'https://api-weather-rioverde-go.onrender.com/';
 
 async function buscarClima() {
   const resultadoEl = document.getElementById('resultado-clima');
