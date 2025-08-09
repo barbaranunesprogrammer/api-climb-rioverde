@@ -122,6 +122,6 @@ Os dados meteorológicos são fornecidos pela WeatherAPI.com.
 
 Desenvolvido por **Bárbara Nunes**.
 
--   GitHub
--   LinkedIn
+-   [GitHub](https://github.com/barbaranunesprogrammer)
+-   [LinkedIn](https://www.linkedin.com/in/barbaranunesprogrammer/)
 
