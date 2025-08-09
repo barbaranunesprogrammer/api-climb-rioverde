@@ -12,7 +12,7 @@ Obtenha facilmente informações como temperatura atual, previsão do tempo para
 Todas as requisições devem ser feitas para a seguinte URL base:
 
 ```
-https://api-climb-rioverde.onrender.com
+https://api-weather-rioverde-go.onrender.com/
 ```
 
 ## Autenticação e Limites
@@ -36,7 +36,7 @@ Retorna as condições meteorológicas atuais em Rio Verde.
 **Exemplo de requisição com `curl`:**
 
 ```bash
-curl -X GET https://api-climb-rioverde.onrender.com/tempo/rioverde
+curl -X GET https://api-weather-rioverde-go.onrender.com/tempo/rioverde
 ```
 
 **Exemplo de resposta (JSON):**
@@ -62,7 +62,7 @@ Retorna a fase da lua atual e outros dados astronômicos para Rio Verde.
 **Exemplo de requisição com `curl`:**
 
 ```bash
-curl -X GET https://api-climb-rioverde.onrender.com/rioverde/moon
+curl -X GET https://api-weather-rioverde-go.onrender.com/rioverde/moon
 ```
 
 **Exemplo de resposta (JSON):**
