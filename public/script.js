@@ -32,7 +32,7 @@ async function buscarPrevisao() {
     }
     document.getElementById('resultado-previsao').textContent = 'Carregando...';
     try {
-        const resp = await fetch(`${BASE_URL}/previsao/rioverde/${data}`);
+        const resp = await fetch(`${BASE_URL}previsao/rioverde/${data}`);
         const dados = await resp.json();
         document.getElementById('resultado-previsao').textContent = JSON.stringify(dados, null, 2);
     } catch (e) {
